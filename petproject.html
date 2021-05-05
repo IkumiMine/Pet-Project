@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Convertion for shoe size">
+    <title>Find your shoe size</title>
+    <link rel="stylesheet" type="text/css" href="css/petproject.css">
+ <!--   <script src="js/jquery-3.5.1.min.js"></script> -->
+    <script src="js/petproject.js"></script> 
+  </head>
+  <body>
+    <header>
+      <div class="page-wrapper">
+        <h2 id="logo"><span id="logo-english">Ikumi</span><span id="logo-japanese">いくみ</span></h2>
+      </div>
+    </header>
+    <main>
+      <div class="page-wrapper">
+        <h1>What is your shoe size in different country?</h1>
+        <p>Only women size is available</p>
+        <div><!-- SELECT COUNTRY-->
+          <label for="country">Select your country:</label>
+          <select id="country" name="country">
+            <option value="">-Country-</option>
+            <option value="US/CAN">US/Canada</option>
+            <option value="UK">United Kingdom</option>
+            <option value="JP">Japan</option>
+          </select>
+        </div><!--END OF SELECT COUNTRY-->
+        <div class="size-container"><!-- SELECT SIZE US/CAN-->
+          <div class="sizeOptions">
+            <label for="sizeUS">Select your size:</label>
+            <select name="sizeUS" id="sizeUS">
+              <option value="">-US/Canada size-</option>
+              <option value="4.5">4.5</option>
+              <option value="5">5</option>
+              <option value="5.5">5.5</option>
+              <option value="6">6</option>
+              <option value="6.5">6.5</option>
+              <option value="7">7</option>
+              <option value="7.5">7.5</option>
+              <option value="8">8</option>
+              <option value="8.5">8.5</option>
+              <option value="9">9</option>
+              <option value="9.5">9.5</option>
+              <option value="10">10</option>
+              <option value="10.5">10.5</option>
+              <option value="11">11</option>
+              <option value="11.5">11.5</option>
+              <option value="12">12</option>
+              <option value="12.5">12.5</option>
+              <option value="12">13</option>
+              <option value="12.5">13.5</option>
+            </select>
+            <p class="errorMsg" id="errorMsgUS">Choose your size</p>
+          </div>
+        </div><!--END OF SELECT SIZE US/CAN-->
+        <div class="size-container"><!-- SELECT SIZE UK-->
+          <div class="sizeOptions">
+            <label for="sizeUK">Select your size:</label>
+            <select name="sizeUK" id="sizeUK">
+              <option value="">-UK size-</option>
+              <option value="2.5">2.5</option>
+              <option value="3">3</option>
+              <option value="3.5">3.5</option>
+              <option value="4">4</option>
+              <option value="4.5">4.5</option>
+              <option value="5">5</option>
+              <option value="5.5">5.5</option>
+              <option value="6">6</option>
+              <option value="6.5">6.5</option>
+              <option value="7">7</option>
+              <option value="7.5">7.5</option>
+              <option value="8">8</option>
+              <option value="8.5">8.5</option>
+              <option value="9">9</option>
+              <option value="9.5">9.5</option>
+              <option value="10">10</option>
+              <option value="10.5">10.5</option>
+              <option value="11">11</option>
+              <option value="11.5">11.5</option>
+            </select>
+            <p class="errorMsg" id="errorMsgUK">Choose your size</p>
+          </div>
+        </div><!--END OF SELECT SIZE UK-->
+        <div class="size-container"><!-- SELECT SIZE JP-->
+          <div class="sizeOptions">
+            <label for="sizeJP">Select your size:</label>
+            <select name="sizeJP" id="sizeJP">
+              <option value="">-JP size-</option>
+              <option value="22">22</option>
+              <option value="22.5">22.5</option>
+              <option value="23">23</option>
+              <option value="23.5">23.5</option>
+              <option value="24">24</option>
+              <option value="24.5">24.5</option>
+              <option value="25">25</option>
+              <option value="25.5">25.5</option>
+              <option value="26">26</option>
+              <option value="26.5">26.5</option>
+              <option value="27">27</option>
+              <option value="27.5">27.5</option>
+              <option value="28">28</option>
+              <option value="28.5">28.5</option>
+              <option value="29">29</option>
+              <option value="29.5">29.5</option>
+              <option value="30">30</option>
+            </select>
+            <p class="errorMsg" id="errorMsgJP">Choose your size</p>
+          </div>
+        </div><!--END OF SELECT SIZE JP-->
+        <div>
+          <button type="submit" name="submit" id="showBtn">Let's see your size</button>
+        </div>
+        <section>
+          <h2>The recommended size for you will be displayed here</h2>
+          <p>The data is based on NIKE and Adidas' shoe size chart.</p>
+          <button type="submit" name="submit" id="deleteBtn">Check another country</button>
+          <div class="table-container">
+            <table class="resultTable" id="tableUS"><!-- US/CANADA SIZE TABLE -->
+              <thead>
+                <tr>
+                  <th>US/Canada</th>
+                  <th colspan="3">United Kingdom</th>
+                  <th colspan="2">Japan(cm)</th>
+                </tr>
+              </thead>
+              <tbody> 
+                <tr id="rowUS_1">
+                  <td>4.5</td>
+                  <td>2.5</td>
+                  <td></td>
+                  <td></td>
+                  <td>22</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUS_2">
+                  <td>5</td>
+                  <td>3</td>
+                  <td>3.5</td>
+                  <td></td>
+                  <td>22</td>
+                  <td>22.5</td>
+                </tr>
+                <tr id="rowUS_3">
+                  <td>5.5</td>
+                  <td>3.5</td>
+                  <td>4</td>
+                  <td></td>
+                  <td>22.5</td>
+                  <td>23</td>
+                </tr>
+                <tr id="rowUS_4">
+                  <td>6</td>
+                  <td>4</td>
+                  <td>4.5</td>
+                  <td></td>
+                  <td>23</td>
+                  <td>23.5</td>
+                </tr>
+                <tr id="rowUS_5">
+                  <td>6.5</td>
+                  <td>4.5</td>
+                  <td>5</td>
+                  <td></td>
+                  <td>23</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUS_6">
+                  <td>7</td>
+                  <td>5</td>
+                  <td>5.5</td>
+                  <td></td>
+                  <td>24</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUS_7">
+                  <td>7.5</td>
+                  <td>5.5</td>
+                  <td>6</td>
+                  <td></td>
+                  <td>24</td>
+                  <td>24.5</td>
+                </tr>
+                <tr id="rowUS_8">
+                  <td>8</td>
+                  <td>6</td>
+                  <td>6.5</td>
+                  <td></td>
+                  <td>24.5</td>
+                  <td>25</td>
+                </tr>
+                <tr id="rowUS_9">
+                  <td>8.5</td>
+                  <td>6</td>
+                  <td>6.5</td>
+                  <td>7</td>
+                  <td>25</td>
+                  <td>25.5</td>
+                </tr>
+                <tr id="rowUS_10">
+                  <td>9</td>
+                  <td>6.5</td>
+                  <td>7</td>
+                  <td>7.5</td>
+                  <td>25.5</td>
+                  <td>26</td>
+                </tr>
+                <tr id="rowUS_11">
+                  <td>9.5</td>
+                  <td>7</td>
+                  <td>7.5</td>
+                  <td>8</td>
+                  <td>26</td>
+                  <td>26.5</td>
+                </tr>
+                <tr id="rowUS_12">
+                  <td>10</td>
+                  <td>7.5</td>
+                  <td>8</td>
+                  <td>8.5</td>
+                  <td>26.5</td>
+                  <td>27</td>
+                </tr> 
+                <tr id="rowUS_13">
+                  <td>10.5</td>
+                  <td>8</td>
+                  <td>8.5</td>
+                  <td>9</td>
+                  <td>27</td>
+                  <td>27.5</td>
+                </tr>
+                <tr id="rowUS_14">
+                  <td>11</td>
+                  <td>8.5</td>
+                  <td>9</td>
+                  <td>9.5</td>
+                  <td>27.5</td>
+                  <td>28</td>
+                </tr>
+                <tr id="rowUS_15">
+                  <td>11.5</td>
+                  <td>9</td>
+                  <td>9.5</td>
+                  <td>10</td>
+                  <td>28</td>
+                  <td>28.5</td>
+                </tr>
+                <tr id="rowUS_16">
+                  <td>12</td>
+                  <td>9.5</td>
+                  <td>10</td>
+                  <td>10.5</td>
+                  <td>28.5</td>
+                  <td>29</td>
+                </tr>
+                <tr id="rowUS_17">
+                  <td>12.5</td>
+                  <td>10</td>
+                  <td>10.5</td>
+                  <td>11</td>
+                  <td>29</td>
+                  <td>29.5</td>
+                </tr>
+                <tr id="rowUS_18">
+                  <td>13</td>
+                  <td>10.5</td>
+                  <td>11</td>
+                  <td>11.5</td>
+                  <td>29.5</td>
+                  <td>30</td>
+                </tr>
+                <tr id="rowUS_19">
+                  <td>13.5</td>
+                  <td>11</td>
+                  <td>11.5</td>
+                  <td>12</td>
+                  <td>30</td>
+                  <td>30.5</td>
+                </tr>
+              </tbody>
+            </table><!-- END US/CANADA SIZE TABLE -->
+           
+            <table class="resultTable" id="tableUK"><!-- UK SIZE TABLE -->
+              <thead>
+                <tr>
+                  <th>United Kingdom</th>
+                  <th colspan="3">US/Canada</th>
+                  <th colspan="3">Japan(cm)</th>
+                </tr>
+              </thead>
+              <tbody> 
+                <tr id="rowUK_1">
+                  <td>2.5</td>
+                  <td>4.5</td>
+                  <td></td>
+                  <td></td>
+                  <td>22</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_2">
+                  <td>3</td>
+                  <td>5</td>
+                  <td></td>
+                  <td></td>
+                  <td>22.5</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_3">
+                  <td>3.5</td>
+                  <td>5</td>
+                  <td>5.5</td>
+                  <td></td>
+                  <td>22</td>
+                  <td>22.5</td>
+                  <td>23</td>
+                </tr>
+                <tr id="rowUK_4">
+                  <td>4</td>
+                  <td>5.5</td>
+                  <td>6</td>
+                  <td></td>
+                  <td>22.5</td>
+                  <td>23</td>
+                  <td>23.5</td>
+                </tr>
+                <tr id="rowUK_5">
+                  <td>4.5</td>
+                  <td>6</td>
+                  <td>6.5</td>
+                  <td></td>
+                  <td>23</td>
+                  <td>23.5</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_6">
+                  <td>5</td>
+                  <td>6.5</td>
+                  <td>7</td>
+                  <td></td>
+                  <td>23.5</td>
+                  <td>24</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_7">
+                  <td>5.5</td>
+                  <td>7</td>
+                  <td>7.5</td>
+                  <td></td>
+                  <td>24</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_8">
+                  <td>6</td>
+                  <td>7.5</td>
+                  <td>8</td>
+                  <td>8.5</td>
+                  <td>24.5</td>
+                  <td>25</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_9">
+                  <td>6.5</td>
+                  <td>8</td>
+                  <td>8.5</td>
+                  <td>9</td>
+                  <td>25</td>
+                  <td>25.5</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_10">
+                  <td>7</td>
+                  <td>8.5</td>
+                  <td>9</td>
+                  <td>9.5</td>
+                  <td>25.5</td>
+                  <td>26</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_11">
+                  <td>7.5</td>
+                  <td>9</td>
+                  <td>9.5</td>
+                  <td>10</td>
+                  <td>26</td>
+                  <td>26.5</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_12">
+                  <td>8</td>
+                  <td>9.5</td>
+                  <td>10</td>
+                  <td>10.5</td>
+                  <td>26.5</td>
+                  <td>27</td>
+                  <td></td>
+                </tr> 
+                <tr id="rowUK_13">
+                  <td>8.5</td>
+                  <td>10</td>
+                  <td>10.5</td>
+                  <td>11</td>
+                  <td>26.5</td>
+                  <td>27</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_14">
+                  <td>9</td>
+                  <td>10.5</td>
+                  <td>11</td>
+                  <td>11.5</td>
+                  <td>27.5</td>
+                  <td>28</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_15">
+                  <td>9.5</td>
+                  <td>11</td>
+                  <td>11.5</td>
+                  <td>12</td>
+                  <td>28</td>
+                  <td>28.5</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_16">
+                  <td>10</td>
+                  <td>11.5</td>
+                  <td>12</td>
+                  <td>12.5</td>
+                  <td>28.5</td>
+                  <td>29</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_17">
+                  <td>10.5</td>
+                  <td>12</td>
+                  <td>12.5</td>
+                  <td>13</td>
+                  <td>29</td>
+                  <td>29.5</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_18">
+                  <td>11</td>
+                  <td>12.5</td>
+                  <td>13</td>
+                  <td>13.5</td>
+                  <td>29.5</td>
+                  <td>30</td>
+                  <td></td>
+                </tr>
+                <tr id="rowUK_19">
+                  <td>11.5</td>
+                  <td>13</td>
+                  <td>13.5</td>
+                  <td>14</td>
+                  <td>30</td>
+                  <td>30.5</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table><!-- END UK SIZE TABLE -->
+
+            <table class="resultTable" id="tableJP"><!-- JP SIZE TABLE -->
+              <thead>
+                <tr>
+                  <th>Japan(cm)</th>
+                  <th colspan="2">US/Canada</th>
+                  <th colspan="3">United Kingdom</th>
+                </tr>
+              </thead>
+              <tbody> 
+                <tr id="rowJP_1">
+                  <td>22</td>
+                  <td>4.5</td>
+                  <td>5</td>
+                  <td>2.5</td>
+                  <td>3</td>
+                  <td>3.5</td>
+                </tr>
+                <tr id="rowJP_2">
+                  <td>22.5</td>
+                  <td>5</td>
+                  <td>5.5</td>
+                  <td>3</td>
+                  <td>3.5</td>
+                  <td>4</td>
+                </tr>
+                <tr id="rowJP_3">
+                  <td>23</td>
+                  <td>5.5</td>
+                  <td>6</td>
+                  <td>3.5</td>
+                  <td>4</td>
+                  <td>4.5</td>
+                </tr>
+                <tr id="rowJP_4">
+                  <td>23.5</td>
+                  <td>6</td>
+                  <td>6.5</td>
+                  <td>4</td>
+                  <td>4.5</td>
+                  <td>5.5</td>
+                </tr>
+                <tr id="rowJP_5">
+                  <td>24</td>
+                  <td>7</td>
+                  <td>7.5</td>
+                  <td>5</td>
+                  <td>5.5</td>
+                  <td></td>
+                </tr>
+                <tr id="rowJP_6">
+                  <td>24.5</td>
+                  <td>7.5</td>
+                  <td>8</td>
+                  <td>6</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="rowJP_7">
+                  <td>25</td>
+                  <td>8</td>
+                  <td>8.5</td>
+                  <td>6</td>
+                  <td>6.5</td>
+                  <td></td>
+                </tr>
+                <tr id="rowJP_8">
+                  <td>25.5</td>
+                  <td>8.5</td>
+                  <td>9</td>
+                  <td>6.5</td>
+                  <td>7</td>
+                  <td></td>
+                </tr>
+                <tr id="rowJP_9">
+                  <td>26</td>
+                  <td>9</td>
+                  <td>9.5</td>
+                  <td>7</td>
+                  <td>7.5</td>
+                  <td></td>
+                </tr>
+                <tr id="rowJP_10">
+                  <td>26.5</td>
+                  <td>9.5</td>
+                  <td>10</td>
+                  <td>7.5</td>
+                  <td>8</td>
+                  <td></td>
+                </tr>
+                <tr id="rowJP_11">
+                  <td>27</td>
+                  <td>10</td>
+                  <td>10.5</td>
+                  <td>8</td>
+                  <td>8.5</td>
+                  <td></td>
+                </tr>
+                <tr id="rowJP_12">
+                  <td>27.5</td>
+                  <td>10.5</td>
+                  <td>11</td>
+                  <td>8.5</td>
+                  <td>9</td>
+                  <td></td>
+                </tr> 
+                <tr id="rowJP_13">
+                  <td>28</td>
+                  <td>11</td>
+                  <td>11.5</td>
+                  <td>9</td>
+                  <td>9.5</td>
+                  <td></td>
+                </tr>
+                <tr id="rowJP_14">
+                  <td>28.5</td>
+                  <td>11.5</td>
+                  <td>12</td>
+                  <td>9.5</td>
+                  <td>10</td>
+                  <td></td>
+                </tr>
+                <tr id="rowJP_15">
+                  <td>29</td>
+                  <td>12</td>
+                  <td>12.5</td>
+                  <td>10</td>
+                  <td>10.5</td>
+                  <td></td>
+                </tr>
+                <tr id="rowJP_16">
+                  <td>29.5</td>
+                  <td>12.5</td>
+                  <td>13</td>
+                  <td>10.5</td>
+                  <td>11</td>
+                  <td></td>
+                </tr>
+                <tr id="rowJP_17">
+                  <td>30</td>
+                  <td>13</td>
+                  <td>13.5</td>
+                  <td>11</td>
+                  <td>11.5</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table><!-- END JP SIZE TABLE -->
+          </div><!--END table-container-->
+        </section>
+      </div>
+    </main><!-- END MAIN -->
+    <footer>
+      <div class="page-wrapper">
+        <div id="copyright">&#169;2020 HTTP5103WNB-WebProgramming-N01442368-IkumiMine</div>
+      </div>
+    </footer>
+  </body>  	
+</html>

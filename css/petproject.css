@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Varela+Round&display=swap');
+/* CONTENTS
+  1.GENERAL LAYOUT
+  2.LOGO
+  3.BUTTON
+  4.SIZE SECTION
+  5.TABLE SECTION  */        
+
+/*1.GENERAL LAYOUT*/
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  font-family: 'Varela Round', sans-serif;
+}
+.page-wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+}
+main {
+  text-align: center;
+  margin-top: 5em;
+}
+footer {
+  font-size: 14px;
+  margin-top: 6em;
+}
+/*2.LOGO*/
+#logo {
+  width: 17%;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+#logo-english {
+  color: #4d4d4d;
+  font-size: 1.875em;
+  font-family:'Monoton', cursive;
+  font-weight: normal;
+  margin-left: 15%;
+}
+#logo-japanese {
+  font-size: 0.625em;
+  font-family: "小塚ゴシック Pr6N","KozGoPro-Light",YuGothic,Meiryo, sans-serif;
+  position: absolute;
+  top: 4em;
+  left: 4.7em;
+  letter-spacing: 0.4375em;
+  color: #4d4d4d;
+}
+/*3.BUTTON*/
+button {
+  background-color: #ff6666;
+  border-radius: 8px;
+  padding: 0.5em;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+}
+button:hover {
+  color: #000;
+  background-color: #ffe6e6;
+}
+/*4.SIZE SECTION*/
+.size-container {
+  margin: 1em 0;
+  position:relative;
+}
+h1+p {
+  font-size: 23px;
+}
+.errorMsg {
+  position: absolute;
+  right: 23%;
+  top: 0%;
+  margin-top:0;
+  display: none;
+}
+.showError {
+  display: block;
+}
+/*5.TABLE SECTION*/
+h2 {
+  margin-top: 2em;
+}
+th, td {
+  border: 1px solid #000;
+  padding: 0.5em;
+}
+table {
+  border-collapse: collapse;
+  width: 75%;
+  margin: 2em auto;
+  table-layout: fixed;
+}
+th {
+  background-color: #ffcccc;
+}
+.highLight {
+  background-color: #d3f5f1;
+  font-weight: bold;
+}
+
